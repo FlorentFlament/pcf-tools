@@ -78,6 +78,12 @@ echo "Install cf-uaac gem"
 gem install cf-uaac
 
 
+# Add every users to the docker group
+for user in $(ls /home/); do
+    addgroup --quiet $user docker
+done
+
+# Reboot if required
 if [ -f /var/run/reboot-required ]; then
     cat /var/run/reboot-required
     cat /var/run/reboot-required.pkgs
