@@ -15,18 +15,21 @@ BINARIES=(
     pivnet
     om
     docker-compose
+    fly
 )
 BIN_URLS=(
     "https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-5.1.2-linux-amd64"
     "https://github.com/pivotal-cf/pivnet-cli/releases/download/v0.0.54/pivnet-linux-amd64-0.0.54"
     "https://github.com/pivotal-cf/om/releases/download/0.41.0/om-linux"
     "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-Linux-x86_64"
+    "https://github.com/concourse/concourse/releases/download/v4.2.1/fly_linux_amd64"
 )
 BIN_SHAS=(
     "8afb3f5b64ba365aa38acb733a57bedd789b1e27"
     "fd4cbb924b50f4e3fb9487babd5c080f1d629569"
     "d0d8890b014514c9fa53b70badf574807b149efa"
     "9303600664184658b7124d0a65f9e12a4d672708"
+    "7b0805adfba328d09cfa7ac377777cb6e270d66f"
 )
 
 function download_file() {
