@@ -46,6 +46,7 @@ function download_file() {
 
 echo "!!! Beware !!! The packages available in Ubuntu Trusty 14.04 are too old to allow installing cf-uaac"
 apt update
+apt upgrade -y
 
 echo "Installing distribution packages: $PACKAGES"
 apt install -y $PACKAGES
@@ -75,3 +76,10 @@ fi
 
 echo "Install cf-uaac gem"
 gem install cf-uaac
+
+
+if [ -f /var/run/reboot-required ]; then
+    cat /var/run/reboot-required
+    cat /var/run/reboot-required.pkgs
+    reboot
+fi
